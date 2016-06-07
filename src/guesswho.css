@@ -1,0 +1,172 @@
+.guess-who.has-js{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.guess-who figure {
+    margin: 2em 1em 0 0;
+    padding-bottom: 3em;
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    cursor: pointer;
+}
+
+.guess-who figure.active,
+.guess-who.has-js .details {
+/* 	background-color: #efefef; */
+}
+
+.guess-who figure.active {
+	opacity: 1;
+}
+.guess-who figure.inactive {
+	opacity: 0.4;
+}
+
+
+.guess-who.has-js .details {
+	display: none;
+	padding: 1em 0;
+	margin-bottom: 2em;
+}
+
+.guess-who figure figcaption {
+    position: absolute;
+    top: 58%;
+    left: 0;
+    right: 0;
+    bottom: 3em;
+    background-color: #fff;
+    background-color: rgba(255,255,255,0.8);
+    padding: 0.5em;
+    color: #333;
+}
+.guess-who figure figcaption span {
+  display: block;
+}
+.guess-who figure figcaption span.role {
+	font-size: 0.916666667em; /* 11px */
+	line-height: 1.4;
+}
+.guess-who figure a {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  margin: 0.5em 0;
+  border-radius: 2px;
+}
+
+.guess-who figure a,
+.guess-who figure a:link,
+.guess-who figure a:visited,
+.guess-who figure a:active,
+.guess-who figure a:focus {
+  background-color: #E2E1DB;
+  color: #333;
+}
+
+.guess-who figure:hover a,
+.guess-who figure a:hover {
+	background-color: #24624B;
+	color: #fff;
+}
+
+.guess-who figure figcaption span.fn {
+  font-weight: bold;
+}
+
+.guess-who .details q {
+    font-size: 1.666em;
+    line-height: 1.2;
+    margin: 1em 0;
+    display: block;
+}
+
+a.theme {
+	display: inline-block;
+	background-color: #999;
+	color: #fff;
+	padding: 0.3em 1em;
+	border-radius: 3px;
+}
+
+a.theme:after,
+a.theme::after {
+	content: " Â» ";
+}
+
+
+.guess-who [data-theme="Learning, teaching and the student experience"] q{
+	color: #ecc414; /* Yellow */
+}
+.guess-who figure[data-theme="Learning, teaching and the student experience"]:hover a,
+.guess-who figure[data-theme="Learning, teaching and the student experience"] a:hover {
+	background-color: #ecc414; /* Yellow */
+	text-decoration: none;
+}
+[data-theme="Learning, teaching and the student experience"] a.theme {
+	background-color: #ecc414; /* Yellow */
+}
+
+.guess-who [data-theme="Effectiveness and sustainability"] q {
+	color: #f57f2d; /* Orange */
+}
+.guess-who figure[data-theme="Effectiveness and sustainability"]:hover a,
+.guess-who figure[data-theme="Effectiveness and sustainability"] a:hover {
+	background-color: #f57f2d; /* Orange */
+	text-decoration: none;
+}
+[data-theme="Effectiveness and sustainability"] a.theme {
+	background-color: #f57f2d; /* Orange */
+}
+
+
+.guess-who [data-theme="Research with impact"] q {
+	color: #b16b5a; /* brown */
+}
+.guess-who figure[data-theme="Research with impact"]:hover a,
+.guess-who figure[data-theme="Research with impact"] a:hover {
+	background-color: #b16b5a; /* brown */
+	text-decoration: none;
+}
+[data-theme="Research with impact"] a.theme {
+	background-color: #b16b5a; /* brown */
+}
+
+.guess-who [data-theme="Partnerships and public engagement"] q {
+	color: #bfb7a8; /* grey */
+}
+.guess-who figure[data-theme="Partnerships and public engagement"]:hover a,
+.guess-who figure[data-theme="Partnerships and public engagement"] a:hover {
+	background-color: #bfb7a8; /* grey */
+	text-decoration: none;
+}
+[data-theme="Partnerships and public engagement"] a.theme {
+	background-color: #bfb7a8; /* grey */
+}
+
+.guess-who .details blockquote {
+    padding: 0;
+    color: #333;
+    font-size: 1.079688741em; /* 14px */
+}
+
+@media only screen and (min-width: 915px) {
+	.guess-who.has-js{
+		justify-content: space-between;
+	}
+	.guess-who figure {
+		margin-right: 0;
+	}
+	.row.i25-50-100 {
+		margin-bottom: 2em;
+	}
+}
