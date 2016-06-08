@@ -14,18 +14,12 @@
 			"Partnerships and public engagement":"/about/our-strategy/key-areas/engagement/"
 		};
 		
-		this.addClass("has-js");
-		
-		this.find("figure").append($('<a href="#">Show</a>').on("click", function(e){ 
-			e.preventDefault();
-		} ));
-		
 		this.find(".details[data-theme]").each(function(i) {
 			var theme = $(this).data("theme");
 			$(this).append('<a href="'+links[theme]+'" class="theme">'+theme+'</a>');
 		});
-		
-				
+
+		this.addClass("has-js");
 		
 		this.find("figure").on("click", function(){
 			that.find(".details").not('[data-id="'+$(this).data('id')+'"]').hide();
@@ -49,11 +43,9 @@
 			
 			$(this).siblings("figure").find("a").html("Show");
 			
-		});
+		}).append($('<a href="#">Show</a>').on("click", function(e){ e.preventDefault(); } ));
 		
-		this.guesswho_reflow({per_row:3});
-		
-		$(window).resize(function() {
+		function calculateColumns() {
 			var w = $( window ).width();
 			if( ((w >= 915)) && thresh !== 3){
 				thresh = 3;
@@ -65,7 +57,11 @@
 				thresh = 1;
 				$(".guess-who").guesswho_reflow({per_row:1});
 			}
-		});
+		}
+		
+		$(window).resize(calculateColumns);
+		
+		calculateColumns();
 
 		return this;
 	};
@@ -75,17 +71,13 @@
 		var total = this.find("figure").length -1;
 		var $temp = [];
 		var that = this;
-		
-		//console.log("🔁 REFLOW " + o.per_row);
 
 		this.find("figure").each(function(i) {
 			var id = $(this).data('id');
-			//console.log($(this).find(".fn").html(), id);
 			$temp.push( $('.details[data-id="'+id+'"]').detach() );
 			
 			if(o.per_row === 1 || (i>0 && (i+1)%o.per_row === 0) || i===total) {
 				for (var x in $temp){
-					//console.log("Reattach #" + id)
 					$(this).after($temp[x]);
 				}
 			 $temp = [];
@@ -98,5 +90,3 @@
 
 	
 })( jQuery );
-
-
